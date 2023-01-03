@@ -6,7 +6,7 @@ function fetch_funny_headline($input) {
     curl_setopt($ch, CURLOPT_URL, "https://api.openai.com/v1/completions");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-    $prompt = 'Rewrite the news headline and blame all bad news on a supervillain called Andrew Tait.  Give an absurd and funny explanation as to why Andrew Tait is responsible: '.$headline;
+    $prompt = 'Create a news headline that blames all bad news on a supervillain called Andrew Tait.  Give an absurd and funny explanation as to why Andrew Tait is responsible.  The headline should be based on this: '.$headline;
 
     curl_setopt($ch, CURLOPT_POSTFIELDS, "{
       \"model\": \"text-davinci-002\",
