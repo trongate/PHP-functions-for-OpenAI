@@ -28,7 +28,7 @@ function fetch_main_object($input) {
   }
   curl_close ($ch);
 
-  echo $result;
-
-  die();
+  $response_obj = json_decode($result);
+  $response_text = $response_obj->choices[0]->text;
+  return $response_text;
 } 

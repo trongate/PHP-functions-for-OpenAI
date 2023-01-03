@@ -27,7 +27,7 @@ function generate_image() {
     }
     curl_close ($ch);
 
-    echo $result;
-
-    die();
+    $response_obj = json_decode($result);
+    $pic_path = $response_obj->data[0]->url;
+    return $pic_path;
 } 
