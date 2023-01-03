@@ -1,7 +1,4 @@
-function generate_image() {
-    $posted_data = file_get_contents('php://input');
-    $data = json_decode($posted_data);
-    $target_object = $data->target_object ?? '';
+function generate_image($target_object) {
 
     $ch = curl_init();
 
@@ -30,4 +27,4 @@ function generate_image() {
     $response_obj = json_decode($result);
     $pic_path = $response_obj->data[0]->url;
     return $pic_path;
-} 
+}
