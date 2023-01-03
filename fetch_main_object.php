@@ -1,5 +1,4 @@
-function fetch_main_object($input) {
-  $headline = $input['params']['original_headline'];
+function fetch_main_object($headline) {
 
   $ch = curl_init();
 
