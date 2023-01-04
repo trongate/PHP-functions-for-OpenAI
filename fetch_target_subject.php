@@ -1,4 +1,4 @@
-    function fetch_main_subject($headline) {
+    function fetch_target_subject($headline) {
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://api.openai.com/v1/completions");
