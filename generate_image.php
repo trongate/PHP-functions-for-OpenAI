@@ -1,11 +1,11 @@
-    function generate_image($target_object) {
+    function generate_image($target_subject) {
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://api.openai.com/v1/images/generations");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, "{
             \"model\": \"image-alpha-001\",
-            \"prompt\": \"A picture of a clown laughing in front of $target_object'\",
+            \"prompt\": \"A picture of a clown laughing in front of $target_subject'\",
             \"num_images\":1,
             \"size\":\"512x512\",
             \"response_format\":\"url\"
