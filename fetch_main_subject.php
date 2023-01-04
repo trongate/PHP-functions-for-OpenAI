@@ -39,7 +39,18 @@
 
         // Create the response object
         $output = new stdClass();
-        $output->text = trim($response_text);
+
+        $subject = $output->text;
+        $bits = explode('"', $subject);
+        if (isset($bits[1])) {
+            $target_subject = $bits[1];
+        } else {
+            $alt_bits = explode(' is ', $subject);
+            $target_subject = (isset($alt_bits[1])) ? $alt_bits[1] : $subject;
+            $target_subject = strstr($target_subject, '.', true);
+        }
+
+        $output->text = trim($target_subject);
         $output->status = $httpCode;
 
         return $output;
