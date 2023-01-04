@@ -1,0 +1,11 @@
+## Sample PHP Code For OpenAI
+
+This repo contains some PHP code that can be used to query the OpenAI API.  The code uses no third party dependencies and executes HTTP requests by using the cURL extension.
+
+When submitting requests to OpenAI, there are a variety of properties that are required, as part of our HTTP requests.  Each property - along with its purpose is - described below:
+
+1. **model**: This is the name of the language model to use for generating the suggestions. The model determines the style and tone of the generated text. In the (generate funny headline) example provided, the `text-davinci-002` model is being used, which is a high-quality language model trained on a large dataset of human-generated text.
+2. **prompt**: This is the string that provides context for the suggestions. The prompt is used by the language model as a starting point for generating the suggestions. An example of a promot is "Name suggestions for a friendly cat:", which tells the model to generate a list of pet names that might be suitable for a friendly cat.
+3. **max_tokens**: This is the maximum number of tokens (words) that should be included in the generated suggestions. If the `max_tokens` parameter is set to 10, it means that the API will generate up to 10 words for each suggestion.
+4. **top_p**: This is the probability threshold for selecting tokens when generating the suggestions. The `top_p` parameter controls how confident the language model should be in its choices of words. In the example provided, the `top_p` parameter is set to 1, which means that the model will only include words that it is completely certain about in the generated suggestions.
+5. **stop**: This is a string that indicates where the API should stop generating suggestions. The `stop` parameter is used to specify a sequence of characters that, when encountered, will cause the API to stop generating text. It's common to have the `stop` parameter set to ".", which means that the API will stop generating text as soon as it encounters a period.
