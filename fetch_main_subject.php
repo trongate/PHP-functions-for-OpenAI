@@ -1,5 +1,4 @@
     function fetch_main_subject($headline) {
-
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://api.openai.com/v1/completions");
@@ -36,13 +35,12 @@
             $response_text = $response_obj->choices[0]->text ?? '';
         }
 
-
         curl_close ($ch);
 
         // Create the response object
-        $response = new stdClass();
-        $response->text = trim($response_text);
-        $response->status = $httpCode;
+        $output = new stdClass();
+        $output->text = trim($response_text);
+        $output->status = $httpCode;
 
-        return $response;
+        return $output;
     }

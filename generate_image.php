@@ -48,10 +48,10 @@
 
         curl_close ($ch);
 
-        // Create the response object
-        $response = new stdClass();
-        $response->text = $response_text;
-        $response->status = $httpCode;
+        // Create the output object
+        $output = new stdClass();
+        $output->text = $response_text;
+        $output->status = $httpCode;
 
-        return $response;
+        return $output;
     }
