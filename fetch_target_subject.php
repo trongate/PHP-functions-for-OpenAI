@@ -5,7 +5,7 @@
         curl_setopt($ch, CURLOPT_URL, "https://api.openai.com/v1/completions");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-        $prompt = 'What is the main subject in the following English sentence: '.$headline;
+        $prompt = 'What is the direct object in the following English sentence: '.$headline;
 
         curl_setopt($ch, CURLOPT_POSTFIELDS, "{
             \"model\": \"text-davinci-002\",
