@@ -1,4 +1,5 @@
     function fetch_target_subject($headline) {
+
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://api.openai.com/v1/completions");
@@ -40,7 +41,7 @@
         // Create the response object
         $output = new stdClass();
 
-        $subject = $output->text;
+        $subject = $response_text;
         $bits = explode('"', $subject);
         if (isset($bits[1])) {
             $target_subject = $bits[1];
